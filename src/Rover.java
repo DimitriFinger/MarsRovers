@@ -51,10 +51,9 @@ public class Rover {
   
   //recebe a string
     public void RecebeComandos(String comandos){
-        for (int i = 0; i < comandos.length();i++){
-            ExecutaComando(comandos.charAt(i));
-        }
-     }
+        for (int i = 0; i < comandos.length();i++)
+            ExecutaComando(comandos.charAt(i));        
+    }
         
     
   //trata o caractér específico   
@@ -68,37 +67,34 @@ public class Rover {
             }
         } else           
             mover();
-     }
+    }
     
     //metodo para movimentar
     public void mover(){            
-            if(orientacao == N && ((posicaoY) < mapaY) ){
+            if(orientacao == N && ((posicaoY) < mapaY) )
                 this.posicaoY++;
-            } else if (orientacao == S && ((posicaoY) > 0)){
-                    this.posicaoY--;
-                } else if (orientacao == E && ((posicaoX) < mapaX )){
-                        this.posicaoX++;
-                    } else if (orientacao == W && ((posicaoX) > 0)){
-                            this.posicaoX--;
-                        }                
-     }
+            else if (orientacao == S && ((posicaoY) > 0))                
+                this.posicaoY--;            
+            else if (orientacao == E && ((posicaoX) < mapaX ))
+                this.posicaoX++;
+            else if (orientacao == W && ((posicaoX) > 0))
+                this.posicaoX--;
+                                        
+    }
     
     //metodos para rotação
     public void virarEsquerda(){        
-        if ((orientacao - 1) < N){
+        if ((orientacao - 1) < N)
             orientacao = W;   
-        } else { 
-             orientacao--;                
-        }
-     }
+        else  
+             orientacao--;              
+    }
     
     public void virarDireita(){
-        if ((orientacao + 1) > W){
+        if ((orientacao + 1) > W)
             orientacao = N;   
-        } else {
-                 orientacao++;   
-                }
-     }
-            
+        else 
+            orientacao++;                
+    }       
             
   }
